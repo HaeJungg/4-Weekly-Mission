@@ -1,0 +1,159 @@
+.main {
+  margin: 4rem 0;
+  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  width: 32.5rem;
+  height: 32.7rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+
+  &:hover {
+    background-color: var(--gray5);
+  }
+
+  .card-img {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    height: 19.2rem;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 19.2rem;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .star-image {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text-area {
+    color: var(--black);
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 2rem;
+    flex-direction: column;
+
+    span {
+      display: block;
+    }
+
+    .timeAgo {
+      font-size: 1.3rem;
+      color: #666666;
+    }
+
+    p {
+      font-size: 1.8rem;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .createdAt {
+      font-size: 1.4rem;
+      color: #333333;
+    }
+  }
+  .kebab-menu {
+    position: absolute;
+    top: 20rem;
+    right: 2rem;
+    z-index: 1000;
+    overflow: visible;
+
+    .kebab-menu-icon {
+      width: 2.1rem;
+      height: 1.7rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: none;
+    }
+
+    .kebab-list {
+      position: absolute;
+      top: 100%;
+      width: max-content;
+      z-index: 100000;
+      overflow: visible;
+      white-space: nowrap;
+      background: #fff;
+      box-shadow: 0 0.2rem 0.8rem 0 rgba(51, 50, 54, 0.1);
+
+      ul {
+        list-style: none;
+        padding: 0;
+        row-gap: 0.2rem;
+        width: 10rem;
+
+        li {
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          list-style-type: none;
+          font-size: 1.4rem;
+          color: var(--gray0);
+          height: 3.1rem;
+          transition: color 0.3s;
+
+          &:hover {
+            background-color: var(--gray4);
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    .kebab-img {
+      width: 2.1rem;
+      height: 1.7rem;
+    }
+  }
+}
+
+.card:hover .card-img img {
+  transform: scale(1.3);
+}
+
+.star-image img:hover,
+.kebab-menu-icon img:hover {
+  transform: none;
+}
