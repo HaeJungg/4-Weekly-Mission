@@ -42,6 +42,7 @@ const Search = ({
   const handleClearSearch = () => {
     setSearchText("");
     setFilteredLinks(folderLinkList);
+    onSearch("");
   };
 
   return (
