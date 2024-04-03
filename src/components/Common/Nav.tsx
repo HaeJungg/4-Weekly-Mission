@@ -8,17 +8,15 @@ interface NavProps {
 }
 
 const Nav = ({ sticky }: NavProps) => {
-  const navClass = sticky ? "nav sticky" : "nav static";
-
   return (
-    <div className={navClass}>
+    <nav className={`nav ${sticky ? "stikcy" : "static"}`}>
       <a href="/">
         <img className="logo-image" src={logoImage} alt="Linkbrary 로고" />
       </a>
       <div>
         <Account />
       </div>
-    </div>
+    </nav>
   );
 };
 
